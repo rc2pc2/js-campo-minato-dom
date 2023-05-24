@@ -5,12 +5,10 @@ playButton.addEventListener(('click'), function(){
 
 function startNewGame(){
     const gridElement = document.querySelector('div.grid');
-
-    // value di una select
     const level = parseInt(document.getElementById('level-select').value);
 
     let cellsNumber = 0;
-    let cellsClass = "";
+    let cellsClass;
 
     if (level === 0){
         cellsNumber = 100;
@@ -24,7 +22,6 @@ function startNewGame(){
     }
 
     gridElement.innerHTML = "";
-    console.clear();
 
     for (let index = 0; index < cellsNumber; index++) {
         const newCell = createElement('div','cell '+ cellsClass,
