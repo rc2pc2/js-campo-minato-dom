@@ -28,7 +28,8 @@ header img{
     height: 4rem;
 }
 
-header button{
+header button,
+header select{
     padding: 1rem 2.5rem;
     border: none;
     border-radius: 1rem;
@@ -50,9 +51,24 @@ div.grid .cell{
 }
 
 div.grid .cell{
+    display: flex;
+}
+
+div.grid .cell.cell-easy{
     width: calc(100% / 10);
     height: calc(100% / 10);
-    display: flex;
+}
+
+
+div.grid .cell.cell-medium{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+
+div.grid .cell.cell-hard{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 div.grid .cell.active{
