@@ -57,7 +57,7 @@ function startNewGame(){
                     }
                 }
             } else {
-                alert('La partita è finita, per continuare inizia una nuova partita');
+                alert('Game is over, please start a new game!');
             }
         }, {once: true});
 
