@@ -25,15 +25,13 @@ function startNewGame(){
     }
 
     const bombsList = getRandomUniqueNumber(1, cellsNumber, 16);
-    console.log(bombsList);
 
     outputBanner.innerHTML = "Welcome! Click a cell to get a point!";
     gridElement.innerHTML = "";
     gridElement.classList.remove('game-over');
 
     for (let index = 0; index < cellsNumber; index++) {
-        const newCell = createElement('div','cell '+ cellsClass,
-        ``);
+        const newCell = createElement('div','cell '+ cellsClass, ``);
         const isThisABomb = bombsList.includes(index + 1);
 
         if (isThisABomb){
@@ -44,13 +42,12 @@ function startNewGame(){
         newCell.addEventListener('click', function(){
             if (!isGameOver){
                 if ( isThisABomb ){ // user clicked a bomb
+                    isGameOver = true;
                     outputBanner.innerHTML = "Game over, your score is: "+ userScore;
                     gridElement.classList.add('game-over');
-                    isGameOver = true;
                 } else { // not a bomb
                     userScore++;
                     outputBanner.innerHTML = "You scored a point! Your score is: "+ userScore;
-                    console.log(index + 1, userScore);
                     this.classList.add('active'); // this === newCell
                     this.innerHTML = '<img src="./img/flower.png" alt="A tiny little flower">';
 
